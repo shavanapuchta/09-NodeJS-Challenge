@@ -1,8 +1,8 @@
-# adfasdf
+# Good Greens
 
 ## Description
     
-asdfasdf
+This site helps you locate vegan and vegetarian restaurants.
   
 ## Table of Contents
   
@@ -15,33 +15,31 @@ asdfasdf
   
 ## License 
     
-    [![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]
+    ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-    This project is licensed under the Apache license.
+    This project is licensed under the MIT license.
 
-    (https://opensource.org/licenses/Apache-2.0)
-
-[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]
+    (https://opensource.org/licenses/MIT)
   
 ## Installation
   
-asdfasdf
+There are no installation instructions for this application.
   
 ## Usage
   
-asdfasdf
+Search restaurants by entering city and country, then press "Search"
   
 ## Contributing
   
-adsfadsf
+There are no contribution instructions for this project.
   
 ## Tests
   
-adfsdf
+There are no testing instructions for this project.
   
 ## Questions
   
 For questions, please reach out using the following contact information:
   
-GitHub Username: adfasdf
-Email: asdfasdf
+GitHub Username: shavanapuchta
+Email: shavanapuchta@gmail.com
