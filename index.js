@@ -1,8 +1,11 @@
 // TODO: Include packages needed for this application
+
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -25,10 +28,10 @@ const questions = [
         message: "Please provide usage instructions for this project:",
     },
     {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: "What license will be used for this project?",
-        choices: ['Apache 2.0', 'GNU v3.0', 'MIT', 'BSD 2-Clause Simplified', 'BSD 3-Clause New or Revised', 'Boost', 'Creative Commons', 'Eclipse', 'GNU Affero v3.0', 'GNU v2.0', 'GNU v2.1', 'Mozilla', 'The Unilicense', 'None'],
+        choices: ['Apache', 'GNU', 'MIT', 'BSD', 'Boost', 'Eclipse', 'Mozilla', 'The Unilicense', 'None'],
     },
     {
         type: 'input',
@@ -52,49 +55,80 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    return `# ${fileName.title}
-    ## Description
-    ${data.description}
+
+//TODO: Create a function to write README file
+
+function writeToFile(data) {
+    const { title, description, installation, usage, license, contributing, tests, github, email } = data;
+
+    const generateMarkdown = `# ${title}
+
+## Description
+      
+${description}
     
-    ## Table of Contents
+## Table of Contents
     
-    -[Installation](#installation)
-    -[Usage](#usage)
-    -[Contributing](#contributing)
-    -[License](#license)
-    -[Tests](#tests)
-    -[Questions](#questions)
+-[License](#license)
+-[Installation](#installation)
+-[Usage](#usage)
+-[Contributing](#contributing)
+-[Tests](#tests)
+-[Questions](#questions)
     
-    ## Installation
+## License 
+
+${renderLicenseBadge(data.license)}
+${renderLicenseLink(data.license)}
+
+This project is licensed under the ${license} license.
+
+## Installation
     
-    ${data.installation}
+${installation}
     
-    ## Usage
+## Usage
     
-    ${data.usage}
+${usage}
     
-    ## Contributing
+## Contributing
     
-    ${data.contributing}
+${contributing}
     
-    ## License
+## Tests
     
-    ${data.license}
+${tests}
     
-    ## Tests
+## Questions
     
-    ${data.tests}
+For questions, please reach out using the following contact information:
     
-    ## Questions?
-    
-    GitHub Username: ${data.github}
-    Email: ${data.email}`;
+GitHub Username: ${github}
+Email: ${email}`;
+
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+inquirer.prompt(questions).then((data) => {
+    const md = generateMarkdown(data);
 
-// Function call to initialize app
+    console.log(md);
+
+
+    fs.writeFile('README.md', md, (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        console.log('Successfully created README file!');
+    });
+
+});
+
+//TODO: Create a function to initialize app
+
+function init() { }
+
+//TODO: Function call to initialize app
+
 init();
