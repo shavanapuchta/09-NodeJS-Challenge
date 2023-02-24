@@ -58,56 +58,6 @@ const questions = [
 
 //TODO: Create a function to write README file
 
-function writeToFile(data) {
-    const { title, description, installation, usage, license, contributing, tests, github, email } = data;
-
-    const generateMarkdown = `# ${title}
-
-## Description
-      
-${description}
-    
-## Table of Contents
-    
--[License](#license)
--[Installation](#installation)
--[Usage](#usage)
--[Contributing](#contributing)
--[Tests](#tests)
--[Questions](#questions)
-    
-## License 
-
-${renderLicenseBadge(data.license)}
-${renderLicenseLink(data.license)}
-
-This project is licensed under the ${license} license.
-
-## Installation
-    
-${installation}
-    
-## Usage
-    
-${usage}
-    
-## Contributing
-    
-${contributing}
-    
-## Tests
-    
-${tests}
-    
-## Questions
-    
-For questions, please reach out using the following contact information:
-    
-GitHub Username: ${github}
-Email: ${email}`;
-
-}
-
 inquirer.prompt(questions).then((data) => {
     const md = generateMarkdown(data);
 
