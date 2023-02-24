@@ -2,21 +2,21 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === 'Apache') {
-    return '[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]';
+    return '![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)';
   } else if (license === 'GNU') {
-    return '[![License: GNU](https://img.shields.io/badge/License-GPLv3-blue.svg)]';
+    return '![License: GNU](https://img.shields.io/badge/License-GPLv3-blue.svg)';
   } else if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
+    return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
   } else if (license === 'BSD') {
-    return '[![License: BSD](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]';
+    return '![License: BSD](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)';
   } else if (license === 'Boost') {
-    return '[![License: Boost](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]';
+    return '![License: Boost](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)';
   } else if (license === 'Eclipse') {
-    return '[![License: Eclipse](https://img.shields.io/badge/License-EPL_1.0-red.svg)]';
+    return '![License: Eclipse](https://img.shields.io/badge/License-EPL_1.0-red.svg)';
   } else if (license === 'Mozilla') {
-    return '[![License: Mozilla](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]';
+    return '![License: Mozilla](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)';
   } else if (license === 'The Unilicense') {
-    return '[![License: The Unilicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]';
+    return '![License: The Unilicense](https://img.shields.io/badge/license-Unlicense-blue.svg)';
   } else {
     return '';
   }
